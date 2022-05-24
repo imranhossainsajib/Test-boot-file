@@ -5,12 +5,13 @@ ul li a{
 div{
   width: 100%;
   height: 100vh;
-  background-color: yellowgreen;
+ background-color: teal;
   
 }
 .div1{
   margin-top: 100px;
 }
 div:nth-child(2n){
-  background-color: teal;
+   background-color: yellowgreen;
+  
 }
