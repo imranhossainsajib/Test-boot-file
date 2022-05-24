@@ -1,0 +1,63 @@
+@import 'reset';
+
+$header:red;
+p:nth-child(1){
+  background-color:$header ;
+}
+ul{
+  color: red;
+  padding: 10px;
+  li{
+    color: rgb(71, 71, 33);
+    a{
+      color: green;
+      &:hover{
+        color: red;
+      }
+    }
+   
+  }
+}
+@mixin color($first,$last) {
+  background-color:$first;
+  border: 2px solid $last;
+}
+h1{
+  color: red;
+  @include color(teal,blue)
+}
+@mixin cssStyle($value) {
+  @if($value==small){
+padding: 10px;
+  }@if($value==meduim){
+padding: 20px;
+  }@if($value==lagre){
+    padding: 40px;
+  }
+}
+.btn{
+  color: white;
+  background-color: gold;
+  border-radius: 10px;
+  border: 0;
+  font-size: 20px;
+  @include cssStyle(small)
+}
+button{
+  @extend .btn
+}
+
+[class*="col-"]{
+  float: left;
+}
+@for $i from 1 through 12{
+  .col-#{$i}{
+    width: 100%/12 *$i;
+  }
+}
+@mixin margin($position,$unit) {
+  margin-#{$position}:$unit+px;
+}
+button{
+  @include margin(top,100)
+}
