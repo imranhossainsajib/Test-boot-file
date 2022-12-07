@@ -1,0 +1,14 @@
+@import "css/reset";
+
+$heder-bgcolor:rgb(255, 29, 29); 
+@mixin para-style ($i,$v){
+  @if($i==small){
+  font-size: $i;
+  color:$v;
+  }@else{ 
+    color: red
+  }
+}
+h1{
+@include para-style(20px,green);
+}
